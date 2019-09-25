@@ -1,12 +1,28 @@
-//--------------------------------------------------------------------
-// Modules
-module "ec2_instance" {
-  source  = "app.terraform.io/akentosh/ec2-instance/aws"
-  version = "1.21.0"
+provider "aws" {
+  region = "us-east-1"
+}
 
-  ami = "ami-0ff8a91507f77f867"
-  instance_count = 1
+data "aws_ami" "ubuntu" {
+  most_recent = true
+
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-*"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+
+  owners = ["099720109477"] # Canonical
+}
+
+resource "aws_instance" "web" {
+  ami           = "${data.aws_ami.ubuntu.id}"
   instance_type = "t2.micro"
-  name = "adam"
-  vpc_security_group_ids = "sg-e25c9cab"
+
+  tags = {
+    Name = "HelloWorld"
+  }
 }
