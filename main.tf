@@ -23,6 +23,17 @@ resource "aws_instance" "web" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "HelloWorld"
+    Name = "akentosh-demo"
+    CostCenter = "akentosh"
+  }
+}
+
+resource "aws_s3_bucket" "bucket" {
+  bucket = "akentosh-test-bucket"
+  acl    = "private"
+
+  tags = {
+    Name        = "akentosh-test"
+    Environment = "Dev"
   }
 }
