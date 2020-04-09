@@ -20,21 +20,24 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "web" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t2.micro"
+  instance_type = "t2.small"
 
   tags = {
     Name       = "akentosh-demo"
     CostCenter = "akentosh"
+    ttl        = "8h"
+    owner      = "Adam Kentosh"
   }
 }
 
 resource "aws_s3_bucket" "bucket" {
   bucket = "akentosh-test-bucket"
   acl    = "private"
-
   tags = {
     Name        = "akentosh-test"
     Environment = "Dev"
+    ttl    = "8h"
+    owner  = "Adam Kentosh"
   }
 }
 
