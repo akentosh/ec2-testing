@@ -32,7 +32,7 @@ resource "aws_instance" "web" {
 
 resource "aws_s3_bucket" "bucket" {
   bucket = "akentosh-test-bucket"
-  acl    = "public"
+  acl    = "private"
   tags = {
     Name        = "akentosh-test"
     Environment = "Dev"
