@@ -23,7 +23,7 @@ resource "aws_instance" "web" {
   instance_type = "t2.small"
 
   tags = {
-    Name       = "akentosh-demo"
+    Nme       = "akentosh-demo"
     CostCenter = "akentosh"
     ttl        = "8h"
     owner      = "Adam Kentosh"
