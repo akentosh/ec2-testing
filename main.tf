@@ -23,10 +23,11 @@ resource "aws_instance" "web" {
   instance_type = "t2.small"
 
   tags = {
-    Nme       = "akentosh-demo"
-    CostCenter = "akentosh"
-    ttl        = "8h"
-    owner      = "Adam Kentosh"
+    Name        = "app1-var.environment"
+    CostCenter  = "akentosh"
+    ttl         = "8h"
+    owner       = "Adam Kentosh"
+    Environment = var.environment
   }
 }
 
@@ -34,10 +35,10 @@ resource "aws_s3_bucket" "bucket" {
   bucket = "akentosh-test-bucket"
   acl    = "private"
   tags = {
-    Name        = "akentosh-test"
-    Environment = "Dev"
-    ttl    = "8h"
-    owner  = "Adam Kentosh"
+    Name        = "akentosh-var.environment"
+    Environment = var.environment
+    ttl         = "8h"
+    owner       = "Adam Kentosh"
   }
 }
 
