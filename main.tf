@@ -45,3 +45,7 @@ resource "aws_s3_bucket" "bucket" {
 resource "aws_sns_topic" "order_udpates" {
   name = "order-updates-${var.environment}"
 }
+
+resource "aws_sns_topic" "delivery_updates" {
+  name = "delivery-updates-${var.environment}"
+}
