@@ -23,7 +23,7 @@ resource "aws_instance" "web" {
   instance_type = "t2.small"
 
   tags = {
-    Name        = "app1-var.environment"
+    Name        = "app1-${var.environment}"
     CostCenter  = "akentosh"
     ttl         = "8h"
     owner       = "Adam Kentosh"
@@ -35,7 +35,7 @@ resource "aws_s3_bucket" "bucket" {
   bucket = "akentosh-test-bucket"
   acl    = "private"
   tags = {
-    Name        = "akentosh-var.environment"
+    Name        = "app1-${var.environment}"
     Environment = var.environment
     ttl         = "8h"
     owner       = "Adam Kentosh"
@@ -43,5 +43,5 @@ resource "aws_s3_bucket" "bucket" {
 }
 
 resource "aws_sns_topic" "order_udpates" {
-  name = "orde-updates-var.environment"
+  name = "order-updates-${var.environment}"
 }
