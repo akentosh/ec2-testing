@@ -42,3 +42,6 @@ resource "aws_s3_bucket" "bucket" {
   }
 }
 
+resource "aws_sns_topic" "order_udpates" {
+  name = "orde-updates-var.environment"
+}
