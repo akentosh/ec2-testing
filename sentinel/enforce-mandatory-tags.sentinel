@@ -106,6 +106,7 @@ mandatory_tags = [
   "Name",
   "ttl",
   "owner",
+  "Environment",
 ]
 
 ### Rules ###
