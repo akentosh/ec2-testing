@@ -23,7 +23,7 @@ resource "aws_instance" "web" {
   instance_type = "t2.small"
 
   tags = {
-    Nme        = "app1-${var.environment}"
+    Name        = "app1-${var.environment}"
     CostCenter  = "akentosh"
     ttl         = "8h"
     owner       = "Adam Kentosh"
