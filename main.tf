@@ -24,7 +24,7 @@ resource "aws_instance" "web" {
 
   tags = {
     Name        = "app1-${var.environment}"
-    CostCenter  = "akentosh"
+    CostCenter  = "AdamK"
     ttl         = "8h"
     owner       = "Adam Kentosh"
     Environment = var.environment
