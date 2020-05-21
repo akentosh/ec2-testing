@@ -28,7 +28,7 @@ resource "aws_instance" "web" {
     ttl         = "8h"
     owner       = "Adam Kentosh"
     Environment = var.environment
-    demo        = "test"
+    demo        = "ac"
   }
 }
 
