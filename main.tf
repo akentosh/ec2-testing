@@ -29,6 +29,7 @@ resource "aws_instance" "web" {
     owner       = "Adam Kentosh"
     Environment = var.environment
     demo        = "ac"
+    feature     = "feature-tag"
   }
 }
 
