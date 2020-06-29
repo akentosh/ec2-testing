@@ -34,6 +34,7 @@ resource "aws_s3_bucket" "bucket" {
   bucket = "akentosh-test-bucket"
   acl    = "private"
   tags = {
+    CostCenter  = "AdamK"
     Name        = "app1-${var.environment}"
     Environment = var.environment
     ttl         = "8h"
