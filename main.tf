@@ -39,6 +39,7 @@ resource "aws_s3_bucket" "bucket" {
     Environment = var.environment
     ttl         = "8h"
     owner       = "Adam Kentosh"
+    demo        = "WWT"
   }
 }
 
